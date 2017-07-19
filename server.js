@@ -76,10 +76,12 @@ app.get('/api', function apiIndex(req, res) {
   })
 });
 
+// API profile info
 app.get('/api/profile', function(req, res){
   res.json(profile);
 });
 
+// Index of favorite albums
 app.get('/api/albums', function(req, res){
   db.Album.find(function(err, albums) {
     if (err) {
@@ -88,6 +90,22 @@ app.get('/api/albums', function(req, res){
     }
     res.json(albums);
   })
+});
+
+// Show one favorite album
+app.get('/api/albums/:id', function(req, res){
+  // get album id
+  var albumId = req.params.id;
+  console.log('albums show', albumId);
+
+  //find album by id
+  db.Album.findById(albumId, function(err, foundAlbum) {
+    if (err) {
+      res.sendStatus(500);
+      return console.log("index error: " + err);
+    }
+    res.json(foundAlbum);
+  });
 });
 
 /**********
