@@ -33,7 +33,7 @@ var profile = {
   hobbies: [ 'coffee', 'pro wrestling', 'guitar', 'camping', 'listening to podcasts', 'ketogenic diet', 'lumbersexual' ]
 }
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -78,6 +78,16 @@ app.get('/api', function apiIndex(req, res) {
 
 app.get('/api/profile', function(req, res){
   res.json(profile);
+});
+
+app.get('/api/albums', function(req, res){
+  db.Album.find(function(err, albums) {
+    if (err) {
+      res.sendStatus(500);
+      return console.log("index error: " + err);
+    }
+    res.json(albums);
+  })
 });
 
 /**********
