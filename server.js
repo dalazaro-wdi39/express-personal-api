@@ -19,6 +19,19 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
+var profile = {
+  name: "Daryl Jason A. Lazaro",
+  githubUsername: "dalazaro",
+  githubLink: "http://www.github.com/dalazaro",
+  githubProfileImage: "https://avatars1.githubusercontent.com/u/27825269?v=4&s=460",
+  personalSiteLink: "http://dalazaro.github.io",
+  currentCity: "Hayward, CA",
+  familyMembers: [
+    { name: 'Kean Saetern', relationship: 'fiancee' },
+    { name: 'Oliver Alvarado', relationship: 'stepson' }
+  ]
+}
+
 // var db = require('./models');
 
 /**********
@@ -47,16 +60,23 @@ app.get('/api', function apiIndex(req, res) {
   // It would be seriously overkill to save any of this to your database.
   // But you should change almost every line of this response.
   res.json({
-    woopsIForgotToDocumentAllMyEndpoints: true, // CHANGE ME ;)
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/example-username/express-personal-api/README.md", // CHANGE ME
-    baseUrl: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    documentationUrl: "https://github.com/dalazaro/express-personal-api",
+    baseUrl: "https://powerful-springs-78915.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Data about me"},
+      {method: "GET", path: "/api/albums", description: "Index of favorite albums"},
+      {method: "GET", path: "/api/albums/:id", description: "Show one favorite album"},
+      {method: "POST", path: "/api/albums", description: "Create new favorite album"},
+      {method: "PUT", path: "/api/albums/:id", description: "Update one favorite album"},
+      {method: "DELETE", path: "/api/albums/:id", description: "Destroy one favorite album"},
     ]
   })
+});
+
+app.get('/api/profile', function(req, res){
+  res.json(profile);
 });
 
 /**********
