@@ -83,6 +83,8 @@ app.get('/api/profile', function(req, res){
 
 // Index of favorite albums
 app.get('/api/albums', function(req, res){
+
+  // compile album data
   db.Album.find(function(err, albums) {
     if (err) {
       res.sendStatus(500);
@@ -90,15 +92,17 @@ app.get('/api/albums', function(req, res){
     }
     res.json(albums);
   })
+
 });
 
 // Show one favorite album
 app.get('/api/albums/:id', function(req, res){
+
   // get album id
   var albumId = req.params.id;
-  console.log('albums show', albumId);
+  console.log('show album', albumId);
 
-  //find album by id
+  // find album by id
   db.Album.findById(albumId, function(err, foundAlbum) {
     if (err) {
       res.sendStatus(500);
@@ -106,6 +110,30 @@ app.get('/api/albums/:id', function(req, res){
     }
     res.json(foundAlbum);
   });
+
+});
+
+// Create new favorite album
+app.post('/api/albums', function(req, res) {
+
+  // new album using form data (`req.body`)
+  var newAlbum = new db.Album({
+    title: req.body.title,
+    artist: req.body.artist,
+    coverUrl: req.body.coverUrl,
+    releaseDate: req.body.releaseDate
+  });
+  console.log('album created', req.body);
+
+  // save album to DB
+  newAlbum.save(function(err, album) {
+    if (err) {
+      return console.log("create error: " + err);
+    }
+    console.log('created', album.title);
+    res.json(album);
+  });
+
 });
 
 /**********
