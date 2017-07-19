@@ -29,7 +29,8 @@ var profile = {
   familyMembers: [
     { name: 'Kean Saetern', relationship: 'fiancee' },
     { name: 'Oliver Alvarado', relationship: 'stepson' }
-  ]
+  ],
+  hobbies: [ 'coffee', 'pro wrestling', 'guitar', 'camping', 'listening to podcasts', 'ketogenic diet', 'lumbersexual' ]
 }
 
 // var db = require('./models');
