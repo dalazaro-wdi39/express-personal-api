@@ -131,7 +131,7 @@ app.post('/api/albums', function(req, res) {
       return console.log("create error: " + err);
     }
     console.log('created', album.title);
-    res.json(album);
+    res.json({ message: 'Album created!' });
   });
 
 });
@@ -152,6 +152,7 @@ app.put('/api/albums/:id', function(req, res) {
     album.artist = req.body.artist;
     album.coverUrl = req.body.coverUrl;
     album.releaseDate = req.body.releaseDate;
+    console.log('updated album', req.body);
 
     album.save(function(err) {
       if (err) {
@@ -160,6 +161,26 @@ app.put('/api/albums/:id', function(req, res) {
       res.json({ message: 'Album updated!' });
     })
   })
+
+});
+
+// Destroy one favorite album
+app.delete('/api/albums/:id', function(req, res) {
+
+  // get album id
+  var albumId = req.params.id;
+  console.log('show album', albumId);
+
+  // destroy method
+  db.Album.findOneAndRemove({
+    _id: albumId
+  }, function(err) {
+    if (err) {
+      res.status(500);
+      console.log("index error: " + err);
+    }
+    res.json({ message: 'Album deleted!' });
+  });
 
 });
 
