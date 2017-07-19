@@ -136,6 +136,33 @@ app.post('/api/albums', function(req, res) {
 
 });
 
+// Update one favorite album
+app.put('/api/albums/:id', function(req, res) {
+
+  // get album id
+  var albumId = req.params.id;
+  console.log('show album', albumId);
+
+  // find album
+  db.Album.findById(albumId, function(err, album) {
+    if (err) {
+      return console.log("create error: " + err);
+    }
+    album.title = req.body.title;
+    album.artist = req.body.artist;
+    album.coverUrl = req.body.coverUrl;
+    album.releaseDate = req.body.releaseDate;
+
+    album.save(function(err) {
+      if (err) {
+        return console.log("create error: " + err);
+      }
+      res.json({ message: 'Album updated!' });
+    })
+  })
+
+});
+
 /**********
  * SERVER *
  **********/
