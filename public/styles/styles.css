@@ -1,6 +1,6 @@
-/** {
+* {
   border: 1px solid black;
-}*/
+}
 
 body {
 }
@@ -29,6 +29,7 @@ header h4 {
 
 h2 {
   text-align: center;
+  text-transform: uppercase;
 }
 
 li {
@@ -38,6 +39,7 @@ li {
 section {
   display: inline-block;
   width: 100%;
+  font-size: 16px;
 }
 
 section#new-album-input {
@@ -56,4 +58,21 @@ img {
 
 .form-control {
   margin: 0 10px;
+  padding: 0 20px;
+}
+
+section.new-album {
+  margin: 10px auto;
+}
+
+div.album-photo {
+  text-align: center;
+}
+
+div#profile-photo {
+  text-align: center;
+}
+
+form {
+  text-align: center;
 }
