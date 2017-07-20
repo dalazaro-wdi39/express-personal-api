@@ -13,7 +13,7 @@ header h1 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 36px;
-  margin: 20px auto 10px auto;
+  margin: 10px auto;
 }
 
 header h2 {
@@ -27,9 +27,14 @@ header h4 {
   margin: 10px auto;
 }
 
+header.front-header {
+  margin: 20px auto;
+}
+
 h2 {
   text-align: center;
   text-transform: uppercase;
+  margin: 20px auto;
 }
 
 li {
@@ -65,6 +70,10 @@ section.new-album {
   margin: 10px auto;
 }
 
+section#profile {
+  padding-bottom: 20px;
+}
+
 div.album-photo {
   text-align: center;
 }
@@ -75,4 +84,9 @@ div#profile-photo {
 
 form {
   text-align: center;
+}
+
+hr {
+  border-top: 2px solid;
+  margin: 5px auto;
 }

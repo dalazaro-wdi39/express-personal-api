@@ -16,11 +16,15 @@ var albumInfo = [];
         <img src="${profileData.githubProfileImage}" />
       `);
       $('#profile-info').html(`
-        <li>${profileData.name}<li>
-        <li>${profileData.currentCity}</li>
-        <li><a href="${profileData.githubLink}">GitHub Profile</a></li>
-        <li><a href="${profileData.personalSiteLink}">Personal Portfolio</a></li>
-        <li>Hobbies: ${profileData.hobbies}</li>
+        <li><b>Name:</b> ${profileData.name}<li>
+        <br>
+        <li><b>Current City:</b> ${profileData.currentCity}</li>
+        <br>
+        <li><a href="${profileData.githubLink}" target="blank"><b>GitHub Profile</b></a></li>
+        <br>
+        <li><a href="${profileData.personalSiteLink}" target="blank"><b>Personal Portfolio</b></a></li>
+        <br>
+        <li><b>Hobbies:</b> ${profileData.hobbies}</li>
       `);
     }
   });
