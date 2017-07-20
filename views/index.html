@@ -4,26 +4,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Blank</title>
-
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
 
     <!-- VENDOR SCRIPTS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <title>Daryl Lazaro API</title>
+
   </head>
+
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <h1>Under Construction</h1>
-          <h4><a href="/api">Read My API Documentation</a></h4>
+
+
+    <main class="container">
+
+      <header class="front-header">
+        <h1>Daryl Lazaro API</h1>
+        <h2>Under Construction</h2>
+        <h4><a href="/api">Read My API Documentation</a></h4>
+      </header>
+
+      <section class="content" id="profile">
+        <h2>About</h2>
+
+        <div class="col-md-6" id="profile-photo">
         </div>
-      </div>
-    </div>
+
+        <div class="col-md-6" id="profile-info">
+        </div>
+
+      </section>
+
+      <section class="content" id="favorite-albums">
+        <h2>Favorite Albums</h2>
+
+        <div class="albums-list">
+        </div>
+
+      </section>
+
+      <section class="content" id="new-album-input">
+        <h2>Create New Album</h2>
+        <form class="form-inline col-md-8" id="newAlbumForm">
+          <input type="text" class="form-control" name="title" placeholder="Title">
+          <input type="text" class="form-control" name="artist" placeholder="Artist">
+          <input type="text" class="form-control" name="releaseDate" placeholder="Year released">
+          <button type="submit" class="form-control">Submit</button>
+        </form>
+      </section>
+
+      <footer>
+      </footer>
+
+    </main>
   </body>
 </html>

@@ -30,7 +30,7 @@ var profile = {
     { name: 'Kean Saetern', relationship: 'fiancee' },
     { name: 'Oliver Alvarado', relationship: 'stepson' }
   ],
-  hobbies: [ 'coffee', 'pro wrestling', 'guitar', 'camping', 'listening to podcasts', 'ketogenic diet', 'lumbersexual' ]
+  hobbies: [ 'coffee brewing', 'pro wrestling fandom', 'playing guitar', 'collecting vinyl', 'camping', 'listening to podcasts', 'eating ketogenic' ]
 }
 
 var db = require('./models');

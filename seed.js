@@ -13,7 +13,7 @@ var albumsList = [
   {
     title: "Cease to Begin",
     artist: "Band of Horses",
-    coverUrl: "images/cease-to-begin",
+    coverUrl: "images/cease-to-begin.jpg",
     releaseDate: 2007
   }
 ];
