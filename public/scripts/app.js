@@ -49,10 +49,10 @@ var albumInfo = [];
 
         $('.albums-list').append(
           `<section class="new-album">
-            <div class="album-photo col-md-6">
+            <div class="album-photo col-sm-6">
               <img src="${coverUrl}"/>
             </div>
-            <div class="album-info col-md-6">
+            <div class="album-info col-sm-6">
               <li>
               <b>Title:</b> <i>${title}</i><br>
               <b>Artist:</b> ${artist}<br>
