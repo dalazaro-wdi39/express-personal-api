@@ -12,8 +12,9 @@ header {
 header h1 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 36px;
+  font-size: 34px;
   margin: 10px auto;
+  font-weight: 700;
 }
 
 header h2 {
@@ -35,6 +36,8 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   margin: 20px auto;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 li {
@@ -56,8 +59,8 @@ form#newAlbumForm {
 }
 
 img {
-  width: 350px;
-  height: auto;
+  height: 320px;
+  width: auto;
   border: 1px solid black;
 }
 
@@ -76,10 +79,20 @@ section#profile {
 
 div.album-photo {
   text-align: center;
+  margin: 5px auto;
+}
+
+div.album-info {
+  margin: 5px auto;
 }
 
 div#profile-photo {
   text-align: center;
+  margin: 5px auto;
+}
+
+div#profile-info {
+  margin: 5px auto;
 }
 
 form {
@@ -88,5 +101,15 @@ form {
 
 hr {
   border-top: 2px solid;
+  margin: 5px auto;
+}
+
+input.form-control {
+  width: 350px;
+  margin: 5px auto;
+}
+
+button.form-control {
+  width: 100px;
   margin: 5px auto;
 }
